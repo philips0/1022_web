@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <style>
+        /*Global setting*************************/
+
+        * {
+            font-family: Roboto Slab;
+            box-sizing: border-box;
+        }
+
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        ul,
+        ol,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        /*******************************************/
+
+        /*Layout**************************/
+
+        .full-width {
+            width: 100%;
+        }
+
+        .fixed-width {
+            width: 1200px;
+            margin: auto;
+        }
+
+        .col-1 {
+            width: 100%;
+            padding: 15px;
+        }
+
+        .col-2 {
+            width: 50%;
+            float: left;
+            padding: 15px;
+        }
+
+        .col-3 {
+            width: calc(100% / 3);
+            padding: 15px;
+            float: left;
+        }
+
+        .col-4 {
+            width: 25%;
+            padding: 15px;
+            float: left;
+        }
+
+        .col-5 {
+            width: 20%;
+            padding: 15px;
+            float: left;
+        }
+        
+        .col-6 {
+            width: calc(100%/6);
+            padding: 15px;
+            float: left;
+        }
+
+        /*
+        .col-2,.col-3,.col-4,.col-5,col-6 {
+            padding: 15px;
+            float: left;
+        }
+*/
+
+        /*******************************************/
+
+        /*Nav************************************/
+
+        nav {
+            background-color: #8ca2cb;
+            /*            position: fixed;*/
+        }
+
+        nav .col-1 {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        nav .logo {
+            float: left;
+        }
+
+        nav .menu {
+            float: right;
+        }
+
+        nav .menu li {
+            list-style: none;
+            float: left;
+        }
+
+        nav .menu a {
+            text-decoration: none;
+            display: block;
+            color: black;
+            padding-left: 20px;
+            font-size: 14px;
+            transition: all .3s;
+        }
+
+        nav .menu a:hover {
+            color: #701e8e;
+        }
+
+        /*************************************/
+
+        /*Header*****************************/
+
+        header {
+            background-image: url(img/001.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+            padding-top: 250px;
+            padding-bottom: 250px;
+
+            color: #fff;
+            text-align: center;
+
+
+
+            /*   table至中   */
+            /*
+            
+            display: table;
+            height: 500px;
+*/
+        }
+
+        /*
+        header .fixed-width {
+            display: table-cell;
+            vertical-align: middle;
+        }
+*/
+
+        h1 {
+            font-size: 4em;
+        }
+
+        /***************************************/
+
+        /*Slogan****************************/
+
+        #slogan {
+            text-align: center;
+            padding-top: 180px;
+            padding-bottom: 180px;
+        }
+
+        #slogan .fixed-width {
+            width: 760px;
+        }
+
+        #slogan p {
+            color: #272121;
+            font-size: 13px;
+            line-height: 1.5em;
+        }
+
+        #slogan h2 {
+            margin-bottom: 20px;
+        }
+
+        /***************************************/
+
+        /*Works****************************/
+
+        #works {
+            background-image: url(img/001.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+
+            padding-top: 180px;
+            padding-bottom: 180px;
+        }
+
+
+        /***************************************/
+
+        /*Services****************************/
+
+        #services {
+            padding-top: 150px;
+            padding-bottom: 150px;
+        }
+
+        #services .fixed-width:nth-of-type(1) {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        #services h2 {
+            margin-bottom: 20px;
+        }
+
+        #services h3 {
+            margin-top: 20px;
+            margin-bottom: 0;
+        }
+
+        #services .col-3 {
+            height: 200px;
+        }
+
+        /***************************************/
+
+        /*Banner*****************************/
+
+        #banner {
+            background-color: #86beab;
+            padding-top: 150px;
+            padding-bottom: 150px;
+            text-align: center;
+        }
+        #banner h2 {
+            margin-bottom: 20px;
+        }
+
+        /***************************************/
+
+        /*About*************************/
+
+        #about {
+            text-align: center;
+            padding-top: 150px;
+            padding-bottom: 150px;
+        }
+
+        #about .fixed-width:nth-of-type(1) {
+            margin-bottom: 50px;
+        }
+
+        #about h2 {
+            margin-bottom: 20px;
+        }
+
+        #about .pic {
+            height: 450px;
+            overflow: hidden;
+            margin-bottom: 20px;
+
+            border-radius: 3px;
+            /*    圓角 放大   <--圓角50%=圓形-->   */
+            /*            transform: scale(.8);*/
+            /*            border: 10px solid #914e4e;*/
+        }
+
+        /***************************************/
+
+        /*Purchase********************************/
+
+        #purchase {
+            padding-top: 150px;
+            padding-bottom: 150px;
+            background-color: antiquewhite;
+            color: black;
+            text-align: center;
+        }
+
+        #purchase h2 {
+            margin-bottom: 20px;
+        }
+
+        #purchase a {
+            color: brown;
+            text-decoration: none;
+        }
+
+        .botton {
+            display: inline-block;
+            padding: 5px 25px;
+            border: 1px solid #ac612a;
+            /*    亦可直接寫在a    */
+        }
+
+        /***************************************/
+
+        /*Blog************************************/
+        
+        #blog {
+            padding-top: 150px;
+            padding-bottom: 150px;
+        }
+        #blog .fixed-width:nth-of-type(1) {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        #blog h2 {
+            margin-bottom: 20px;
+        }
+        #blog .gallery {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        #blog .gallery img {
+            position: absolute;
+        }
+        #blog .gallery .date {
+            position: absolute;
+            background-color: black;
+            
+            top: 0;
+            left: 0;
+            
+            text-align: center;
+            color: #fff;
+            padding: 5px 10px;
+        }
+        #blog .col-4 p {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        #blog .col-4 a {
+            text-decoration: none;
+            color: #a86cd4;
+            font-weight: bold;
+        }
+
+        /****************************************/
+        
+        /*Sponsor*****************************/
+        
+         #sponsor {
+            text-align: center;
+            padding-top: 100px;
+            padding-bottom: 100px;
+            background-color: #3882a3;
+        }
+        
+        #sponsor .col-6 a {
+            text-decoration: none;
+            color: beige;
+        }
+
+        /****************************************/
+        
+        /*Contact********************************/
+        #contact {
+            padding-top: 150px;
+            padding-bottom: 150px;
+        }
+        #contact .fixed-width:nth-of-type(1) {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        #contact h2 {
+            margin-bottom: 20px;
+        }
+        #contact h3 {
+            padding: 10px 15px;
+        }
+        #contact .info {
+            float: left;
+            width: 400px;
+            padding: 15px;
+            
+            font-size: 13px;
+            color: #6c6464;
+        }
+        #contact .info-item {
+            margin-top: 25px;
+            margin-bottom: 30px;
+        }
+        #contact .info-icon {
+            float: left;
+            width: 35px;
+        }
+        #contact .info-content {
+            float: left;
+            width: 335px;
+        }
+               /*  寬度注意計算  */
+        #contact .info-content ul {
+            list-style: none;
+        }
+        #contact .form {
+            width: 800px;
+            float: left;
+        }
+        input {
+/*            border: 0;*/
+            padding: 15px 10px;
+            width: 100%;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 15px 10px;
+        }
+        .form .botton {
+            display: inline-block;
+            padding: 12px 10px;
+            color: #f5c383;
+            background-color: #3daf34;
+            
+            margin-top: 10px;
+        }
+        
+        /****************************************/
+        
+        /*Footer**********************************/
+        
+        footer {
+            background-color: darkgray;
+            text-align: center;
+            padding-top: 150px;
+            color: black;
+        }
+        footer h2 {
+            margin-bottom: 35px;
+        }
+        footer .sns {
+            margin-bottom: 50px;
+        }
+        footer .sns a {
+            color: #6c4d4d;
+            text-decoration: none;
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+        footer .copy-right {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        
+        /****************************************/
+
+    </style>
+</head>
+
+<body>
+    <nav class="full-width">
+        <div class="col-1 clearfix">
+            <div class="logo">THEME</div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">WORKS</a></li>
+                    <li><a href="#">SERVICES</a></li>
+                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="#">BLOG</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="full-width">
+        <div class="fixed-width">
+            <h1>AMAZING DESIGN</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, hic!</p>
+        </div>
+    </header>
+
+    <div id="slogan">
+        <div class="fixed-width">
+            <h2>WE ARE ~~~~~~~~~~CONTI.<br>~~~~~~~~~~END</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil molestiae fugit enim provident, recusandae, sit atque. Culpa ratione adipisci saepe consequuntur ex cum quidem. Exercitationem inventore cumque, ad odio. Dolore!
+            </p>
+        </div>
+    </div>
+
+    <div id="works" class="full-width"></div>
+
+    <div id="services" class="full-width">
+        <div class="fixed-width">
+            <h2>BEST SERVICES</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </p>
+        </div>
+        <div class="fixed-width clearfix">
+            <div class="col-3">
+
+                <span class="fa fa-car fa-3x"></span>
+                <!--    套用 樣式 大小     -->
+
+                <h3>tittle</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dignissimos, commodi ut at sequi consequuntur!
+                </p>
+            </div>
+            <div class="col-3">
+
+                <span class="fa fa-car fa-3x"></span>
+                <!--    套用 樣式 大小     -->
+
+                <h3>tittle</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dignissimos, commodi ut at sequi consequuntur!
+                </p>
+            </div>
+            <div class="col-3">
+
+                <span class="fa fa-car fa-3x"></span>
+                <!--    套用 樣式 大小     -->
+
+                <h3>tittle</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dignissimos, commodi ut at sequi consequuntur!
+                </p>
+            </div>
+            <div class="col-3">
+
+                <span class="fa fa-car fa-3x"></span>
+                <!--    套用 樣式 大小     -->
+
+                <h3>tittle</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dignissimos, commodi ut at sequi consequuntur!
+                </p>
+            </div>
+            <div class="col-3">
+
+                <span class="fa fa-car fa-3x"></span>
+                <!--    套用 樣式 大小     -->
+
+                <h3>tittle</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dignissimos, commodi ut at sequi consequuntur!
+                </p>
+            </div>
+            <div class="col-3">
+
+                <span class="fa fa-car fa-3x"></span>
+                <!--    套用 樣式 大小     -->
+
+                <h3>tittle</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dignissimos, commodi ut at sequi consequuntur!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="banner" class="full-width">
+        <div class="fixed-width">
+            <h2>TITLE</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. At architecto molestiae quibusdam! Reprehenderit, earum, pariatur!
+            </p>
+        </div>
+    </div>
+
+    <div id="about" class="full-width">
+        <div class="fixed-width">
+            <h2>ABOUT US</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis tempore, quam obcaecati voluptates impedit accusantium saepe tempora illo consectetur tenetur?
+            </p>
+        </div>
+        <div class="fixed-width clearfix">
+            <div class="col-3">
+                <div class="pic">
+                    <img src="img/004.jpg" alt="">
+                </div>
+                <h3>NAME</h3>
+                <p>introduce</p>
+            </div>
+            <div class="col-3">
+                <div class="pic">
+                    <img src="img/004.jpg" alt="">
+                </div>
+                <h3>NAME</h3>
+                <p>introduce</p>
+            </div>
+            <div class="col-3">
+                <div class="pic">
+                    <img src="img/004.jpg" alt="">
+                </div>
+                <h3>NAME</h3>
+                <p>introduce</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="purchase" class="full-width">
+        <div class="fixed-width">
+            <h2>Are you ready???</h2>
+            <a href="#" class="botton">go!!!!!</a>
+        </div>
+    </div>
+    
+    <div id="blog" class="full-width">
+        <div class="fixed-width">
+            <h2>LATEST NEWS</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta accusantium libero ut illo quos. Dicta.
+            </p>
+        </div>
+        <div class="fixed-width clearfix">
+            <div class="col-4 ">
+                <div class="gallery">
+                    <img src="img/007.jpg" alt="">
+                    <div class="date">
+                        <div class="day">12</div>
+                        <div class="month">Mar</div>
+                    </div>
+                </div>
+                <h3>TITTLE</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, non.
+                </p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="col-4 ">
+                <div class="gallery">
+                    <img src="img/007.jpg" alt="">
+                    <div class="date">
+                        <div class="day">12</div>
+                        <div class="month">Mar</div>
+                    </div>
+                </div>
+                <h3>TITTLE</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, non.
+                </p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="col-4 ">
+                <div class="gallery">
+                    <img src="img/007.jpg" alt="">
+                    <div class="date">
+                        <div class="day">12</div>
+                        <div class="month">Mar</div>
+                    </div>
+                </div>
+                <h3>TITTLE</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, non.
+                </p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="col-4 ">
+                <div class="gallery">
+                    <img src="img/007.jpg" alt="">
+                    <div class="date">
+                        <div class="day">12</div>
+                        <div class="month">Mar</div>
+                    </div>
+                </div>
+                <h3>TITTLE</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, non.
+                </p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="full-width" id="sponsor">
+        <div class="fixed-width clearfix">
+            <div class="col-6">
+                <a href="#" class="fa fa-delicious fa-3x"></a>
+            </div>
+            <div class="col-6">
+                <a href="#" class="fa fa-delicious fa-3x"></a>
+            </div>
+            <div class="col-6">
+                <a href="#" class="fa fa-delicious fa-3x"></a>
+            </div>
+            <div class="col-6">
+                <a href="#" class="fa fa-delicious fa-3x"></a>
+            </div>
+            <div class="col-6">
+                <a href="#" class="fa fa-delicious fa-3x"></a>
+            </div>
+            <div class="col-6">
+                <a href="#" class="fa fa-delicious fa-3x"></a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="full-width" id="contact">
+        <div class="fixed-width">
+            <h2>CONTACT</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. consectetur adipisicing elit. Dignissimos, non.
+            </p>
+        </div>
+        <div class="fixed-width clearfix">
+           <h3>INFIRMATION</h3>
+            <div class="info">
+                <div class="info-item clearfix">
+                    <div class="info-icon"><span class="fa fa-tag "></span></div>
+                    <div class="info-content">
+                        <ul>
+                            <li>California</li>
+                            <li>Afela inc.</li>
+                         <!--   條列多項用 ul 或 多個div    -->
+                            <li>48792</li>
+                            <li>Star apple st.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="info-item clearfix">
+                    <div class="info-icon"><span class="fa fa-mobile fa-2x"></span></div>
+                    <div class="info-content">
+                        (800)123-456-789
+                    </div>
+                </div>
+                <div class="info-item clearfix">
+                    <div class="info-icon"><span class="fa fa-envelope"></span></div>
+                    <div class="info-content">
+                        OOXX@gmail.com
+                    </div>
+                </div>
+            </div>
+            <div class="form">
+                <div class="form-name col-2">
+                    <input type="text" placeholder="Name">
+                                  <!--  placeholder:佔位文字    -->
+                </div>
+                <div class="form-mail col-2">
+                    <input type="text" placeholder="Mail">
+                </div>
+                <div class="form-message col-1">
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                            <!-- cols,rows 可以拿掉 在css設定    -->
+                <div class="">
+                    <botton class="botton">Send Message</botton>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="full-width" id="footer">
+        <div class="fixed-width">
+            <h2>AFELA</h2>
+            <div class="sns">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-facebook"></a>
+            </div>
+            <div class="copy-right">
+                2017&copy; / Designed by QQQ
+            </div>
+        </div>
+    </footer>
+    
+    
+    
+    
+</body>
+
+</html>
